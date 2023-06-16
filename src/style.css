@@ -1,3 +1,5 @@
+@import url(./fonts.css);
+
 :root {
   --primary-text-hex: #b294f2;
   --primary-bg-hex: #574c69;
@@ -11,7 +13,7 @@
   --primary-btn-rgb: RGB(51, 41, 71);
   --accent-rgb: RGB(242, 41, 135);
 
-  font-family: ellograph-cf, monospace;
+  font-family: 'Ellograph Regular', monospace;
   font-style: normal;
   font-weight: 100;
   line-height: 1.5;
@@ -27,25 +29,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar a {
-  text-decoration: none;
-}
-
-body {
-  margin: 0;
+section {
   display: flex;
   flex-direction: column;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  gap: 8px;
+  margin-top: 4rem;
 }
 
 .button-group {
@@ -55,8 +42,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 4em;
+  line-height: 1.2;
 }
 
 button {
@@ -94,8 +81,7 @@ button:focus-visible {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: .2rem 1.2rem;
 }
 
 /*
