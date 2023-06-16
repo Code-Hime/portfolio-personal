@@ -11,10 +11,10 @@
         </div>
         <div class="about-body">
             <p>Hi, I'm Lauren [she/her] - a web designer & engineer based in Dallas.</p>
-            <router-link to="/resume">Resume</router-link>
+            <a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a>
         </div>
         <div class="about-footer">
-            <p>Questions? Comments? Magic the Gathering strategies? Interested in working together? <router-link to="/contact">Get in touch</router-link>.</p>
+            <p>Questions? Comments? Magic the Gathering strategies? Interested in working together?</p><router-link to="/contact">Get in touch...</router-link>
         </div>
     </section>
 </template>
@@ -27,6 +27,10 @@ h2 {
 p {
     font-family: 'Ellograph Thin';
     font-size: 1.2rem;
+}
+
+a {
+    text-transform: uppercase;
 }
 
 .about-footer {
