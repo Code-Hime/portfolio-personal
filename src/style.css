@@ -1,11 +1,11 @@
 @import url(./fonts.css);
 
 :root {
-  --primary-text-hex: #b294f2;
+  --primary-text-hex: #CEBAF8;
   --primary-bg-hex: #574c69;
   --accent-btn-hex: #f2c166;
   --primary-btn-hex: #332947;
-  --accent-hex: #f22987;
+  --accent-hex: #EEB4D9;
 
   --primary-text-rgb: RGB(178, 148, 242);
   --primary-bg-rgb: RGB(87, 76, 105);
@@ -16,7 +16,7 @@
   font-family: 'Ellograph Regular', monospace;
   font-style: normal;
   font-weight: 100;
-  line-height: 1.5;
+  line-height: 1.4;
 
   color-scheme: light dark;
   color: var(--primary-text-hex);
@@ -33,12 +33,6 @@ section {
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
 
 h1 {
@@ -74,8 +68,17 @@ button:focus-visible {
   border-color: var(--primary-bg-hex);
 }
 
-.accent-text {
-  color: var(--accent-hex);
+.accent-text a {
+  color: var(--accent-btn-hex) !important;
+  font-family: 'Ellograph Regular';
+}
+
+.footer {
+    width: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 45%;
+    text-align: right;
 }
 
 #app {

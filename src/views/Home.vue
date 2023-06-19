@@ -3,16 +3,32 @@
 </script>
 
 <template>
-    <div class="home-container">
-        <h1 class="hello">
-        Hello World!
-        </h1>
-        <div class="button-group">
-        <button>Press Me!</button>
-        <button class="accent-btn">No Me!</button>
+    <section class="home">
+        <div class="home-header">
+            <h1 class="hello">
+                Hello World!
+            </h1>
         </div>
-    </div>
+        <div class="home-body">
+            <div class="button-group">
+                <button>Press Me!</button>
+                <button class="accent-btn">No Me!</button>
+            </div>
+        </div>
+        <div class="home-footer footer">
+            hi, from down here!
+        </div>
+    </section>
 </template>
 
 <style scoped>
+.home-header {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 </style>
