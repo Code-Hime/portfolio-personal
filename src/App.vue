@@ -3,12 +3,12 @@
 
 <template>
     <div id="nav" class="navbar">
-      <div class="nav-group">
-        <router-link to="/">Home</router-link>
+      <nav class="nav-group">
+        <div class="accent-text"><router-link class="logo" to="/">Lauren Doss</router-link></div>
         <router-link to="/about">About</router-link>
         <router-link to="/portfolio">Portfolio</router-link>
         <router-link to="/contact">Say Hello</router-link>
-      </div>
+      </nav>
     </div>
     <div class="container-view">
       <router-view></router-view>
@@ -16,6 +16,7 @@
 </template>
 
 <style scoped>
+@import url('./style.css');
 .nav-group {
   display: flex;
   flex-direction: row;
@@ -26,6 +27,39 @@
   text-transform: uppercase;
 }
 
+nav a {
+  position: relative;
+}
+
+nav a:not([class^="logo"])::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--accent-btn-hex);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+.logo:hover::before {
+  width: 0%;
+}
+
+.logo:focus::before {
+  width: 0%;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+nav a:focus::before {
+  width: 100%;
+}
+
 .container-view {
   margin: 0;
   min-width: 320px;
@@ -33,12 +67,16 @@
   gap: 8px;
 }
 
-.navbar a {
+nav a {
   text-decoration: none;
+  color: var(--primary-text-hex);
 }
 
-img {
-  max-width: 150px;
-  max-height: 100px;
+nav a:hover {
+  color: var(--accent-hex);
+}
+
+nav a:focus {
+  color: var(--accent-btn-hex);
 }
 </style>
