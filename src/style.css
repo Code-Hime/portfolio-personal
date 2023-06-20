@@ -7,11 +7,11 @@
   --primary-btn-hex: #332947;
   --accent-hex: #EEB4D9;
 
-  --primary-text-rgb: RGB(178, 148, 242);
-  --primary-bg-rgb: RGB(87, 76, 105);
-  --accent-btn-rgb: RGB(242, 193, 102);
-  --primary-btn-rgb: RGB(51, 41, 71);
-  --accent-rgb: RGB(242, 41, 135);
+  --primary-text-rgb: 178, 148, 242;
+  --primary-bg-rgb: 87, 76, 105;
+  --accent-btn-rgb: 242, 193, 102;
+  --primary-btn-rgb: 51, 41, 71;
+  --accent-rgb: 242, 41, 135;
 
   font-family: 'Ellograph Regular', monospace;
   font-style: normal;
@@ -73,12 +73,15 @@ button:focus-visible {
   font-family: 'Ellograph Regular';
 }
 
+/*
+  background-color: rgb(var(--primary-btn-rgb));
+*/
+
 .footer {
-    width: 50%;
-    position: absolute;
-    bottom: 20%;
-    left: 45%;
-    text-align: right;
+  margin-top: 4rem;
+  width: 50%;
+  text-align: right;
+  margin-left: auto;
 }
 
 #app {
