@@ -1,13 +1,13 @@
 <script setup>
-
+const descriptors = ["Creative", "Thoughtful", "Adaptable", "Passionate"];
+const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 100 Mob Boss"];
 </script>
 
 <template>
     <section class="about">
         <div class="about-header">
-            <h2>Creative</h2>
-            <h2>Thoughtful</h2>
-            <h2>Adaptable</h2>
+            <VueWriter :array="descriptors" class="descriptors"></VueWriter>
+            <VueWriter :array="roles" class="descriptors"></VueWriter>
         </div>
         <div class="about-body">
             <p>Hi, I'm Lauren [she/her] - a web designer & engineer based in Dallas.</p>
@@ -25,6 +25,10 @@
 
 <style scoped>
 @import url(../style.css);
+.descriptors {
+    font-size: 3rem;
+}
+
 h2 {
     line-height: 50%;
 }
@@ -44,9 +48,5 @@ p {
 
 a {
     text-transform: uppercase;
-}
-
-.footer {
-    display: none;
 }
 </style>
