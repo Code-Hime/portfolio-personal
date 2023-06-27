@@ -52,7 +52,7 @@ nav a.nav-link::before {
   content: '';
   display: block;
   height: 2px;
-  background-color: var(--accent-btn-hex);
+  background-color: var(--accent-shade-light);
 
   position: absolute;
   top: 0;
@@ -86,15 +86,15 @@ nav a:focus::before {
 
 nav a {
   text-decoration: none;
-  color: var(--primary-text-hex);
+  color: var(--primary-text-shade);
 }
 
 nav a:hover {
-  color: var(--accent-hex);
+  color: var(--accent-shade);
 }
 
 nav a:focus {
-  color: var(--accent-btn-hex);
+  color: var(--accent-shade-light);
 }
 
 div.sidebar-panel-nav {
@@ -102,7 +102,7 @@ div.sidebar-panel-nav {
 }
 
 div.sidebar-panel-nav > a {
-  color: var(--primary-text-hex);
+  color: var(--primary-text-shade);
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
