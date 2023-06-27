@@ -78,6 +78,9 @@ nav a:focus::before {
 }
 
 .container-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
