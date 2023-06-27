@@ -1,17 +1,33 @@
 @import url(./fonts.css);
 
 :root {
-  --primary-text-hex: #CEBAF8;
-  --primary-bg-hex: #574c69;
-  --accent-btn-hex: #f2c166;
-  --primary-btn-hex: #332947;
-  --accent-hex: #EEB4D9;
+  /* OKLCH Updated Palette */
+  /* Primary - Purple */
+  --primary-shade: oklch(57.02% 0.18 301.71);
+  --primary-shade-60: oklch(57.02% 0.18 301.71 / .6);
 
-  --primary-text-rgb: 178, 148, 242;
-  --primary-bg-rgb: 87, 76, 105;
-  --accent-btn-rgb: 242, 193, 102;
-  --primary-btn-rgb: 51, 41, 71;
-  --accent-rgb: 242, 41, 135;
+  /* Accent - Lilac */
+  --accent-shade: oklch(85% 0.0856 333.46);
+  --accent-shade-light: oklch(95% 0.0856 333.46);
+
+  /* Main Text Shade */
+  --primary-text-shade: var(--accent-shade);
+
+  /* Neutral */
+  --neutral-shade: oklch(15.13% 0.0027 325.71);
+
+  /* Success */
+  --success-shade: oklch(82.52% 0.1974 130.38);
+
+  /* Caution */
+  --caution-shade: oklch(87.52% 0.1621 106.23);
+
+  /* Danger */
+  --danger-shade: oklch(60.24% 0.2146 23.1);
+
+  /* Info */
+  --info-shade: oklch(57.6% 0.1549 248.12);
+ 
 
   font-family: 'Ellograph Regular', monospace;
   font-style: normal;
@@ -19,8 +35,8 @@
   line-height: 1.4;
 
   color-scheme: light dark;
-  color: var(--primary-text-hex);
-  background-color: var(--primary-bg-hex);
+  color: var(--primary-text-shade);
+  background-color: var(--primary-shade-60);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,41 +57,42 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 12px;
+  border: 2px solid var(--accent-shade);
+  box-shadow: 4px 4px var(--accent-shade);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--primary-btn-hex);
-  color: var(--primary-text-hex);
+  background-color: var(--neutral-shade);
+  color: var(--accent-shade-light);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: var(--primary-text-hex);
+  border-color: var(--primary-text-shade);
+  box-shadow: none;
+  transition: box-shadow 0.2s ease-in;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--accent-shade-light);
 }
 
 .accent-btn {
-  background-color: var(--accent-btn-hex);
-  color: var(--primary-bg-hex);
+  border: 2px solid var(--neutral-shade);
+  background-color: var(--accent-shade);
+  color: var(--neutral-shade);
+  box-shadow: 4px 4px var(--neutral-shade);
 }
 .accent-btn:hover {
-  border-color: var(--primary-bg-hex);
+  border-color: var(--neutral-shade);
 }
 
 .accent-text a {
-  color: var(--accent-btn-hex) !important;
+  color: var(--accent-shade-light) !important;
   font-family: 'Ellograph Regular';
 }
-
-/*
-  background-color: rgb(var(--primary-btn-rgb));
-*/
 
 .footer {
   margin-top: 4rem;
