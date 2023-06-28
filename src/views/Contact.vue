@@ -12,7 +12,7 @@ import Footer from '../components/Footer.vue';
             </div>
             <div class="contact-body">
                 <div class="contact-group">
-                    <a target="_blank" href="mailto:laurendoss@devforge.dev?subject=Let's work together">laurendoss<font-awesome-icon icon="fa-solid fa-at" />devforge.dev</a>
+                    <a target="_blank" href="mailto:laurendoss@devforge.dev?subject=Let's work together" class="email">laurendoss<font-awesome-icon icon="fa-solid fa-at" />devforge.dev</a>
                     <div class="icon-group">
                         <a target="_blank" href="https://github.com/Code-Hime"><font-awesome-icon icon="fa-brands fa-github" class="contact-icon" /></a>
                         <a target="_blank" href="https://www.linkedin.com/in/lauren-grills-76484893/"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>
@@ -41,19 +41,21 @@ import Footer from '../components/Footer.vue';
 .contact-container {
     display: flex;
     flex-direction: column;
-    width: 70vw;
+    width: 100%;
     gap: 10px;
+    margin: 0 auto;
 
     border-radius: 12px;
     border: 2px solid var(--neutral-shade);
     box-shadow: 4px 4px var(--neutral-shade);
-    padding: 0.6em 1.2em;
+
     background-color: var(--accent-shade);
     color: var(--neutral-shade);
 }
 
 .contact-header {
     text-align: center;
+    width: 100%;
 }
 
 .contact-header > h1 {
@@ -62,7 +64,11 @@ import Footer from '../components/Footer.vue';
 }
 
 .contact-header > h2 {
-    font-size: 1.2rem
+    font-size: 1.4rem;
+}
+
+.email {
+    font-size: 1.2rem;
 }
 
 .contact-group {
@@ -70,16 +76,22 @@ import Footer from '../components/Footer.vue';
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    width: 100%;
 
     font-size: 1.4rem;
 }
 
 .icon-group {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: space-around;
+    padding: 8px 0;
 
-    padding-top: 20px;
+    border-top: 1px solid var(--neutral-shade);
+    background-color: var(--accent-shade-light);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .fa-layers {

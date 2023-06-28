@@ -15,13 +15,15 @@ function toggle() {
     <div id="mobile--nav"
         :class="{'active': isActive }"
         @click.prevent="toggle">
-    <slot>
-        <button type="button" class="mobile--nav-button" title="Menu">
-            <span class="mobile--nav-bar mobile--nav-bar--1"></span>
-            <span class="mobile--nav-bar mobile--nav-bar--2"></span>
-            <span class="mobile--nav-bar mobile--nav-bar--3"></span>
-        </button>
-    </slot>
+        <slot>
+            <div class="mobile--nav-container">
+                <button type="button" class="mobile--nav-button" title="Menu">
+                    <span class="mobile--nav-bar mobile--nav-bar--1"></span>
+                    <span class="mobile--nav-bar mobile--nav-bar--2"></span>
+                    <span class="mobile--nav-bar mobile--nav-bar--3"></span>
+                </button>
+            </div>
+        </slot>
     </div>
 </template>
 
@@ -32,6 +34,19 @@ button:focus {
     outline: 0;
 }
 
+#mobile--nav.active > .mobile--nav-container {
+    background-color: var(--caution-shade);
+}
+
+.mobile--nav-container {
+    background-color: var(--accent-shade);
+    border-radius: 12px;
+    padding: 2px;
+
+    border: 2px solid var(--neutral-shade);
+    box-shadow: 4px 4px var(--neutral-shade);
+}
+
 .mobile--nav-button {
     position: relative;
     height: 30px;
@@ -39,6 +54,7 @@ button:focus {
     display: block;
     z-index: 999;
     border: 0;
+    box-shadow: none;
     border-radius: 0;
     background-color: transparent;
     pointer-events: all;
@@ -46,7 +62,7 @@ button:focus {
 }
 
 .mobile--nav-bar {
-    background-color: var(--accent-btn-hex);
+    background-color: var(--neutral-shade);
     position: absolute;
     top: 50%;
     right: 6px;
@@ -85,7 +101,7 @@ button:focus {
 }
 
 #mobile--nav.active .mobile--nav-bar {
-    background-color: var(--accent-btn-hex);
+    background-color: var(--neutral-shade);
 }
 
 #mobile--nav.active .mobile--nav-bar--1 {

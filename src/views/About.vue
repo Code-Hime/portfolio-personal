@@ -1,6 +1,10 @@
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Footer from '../components/Footer.vue';
+import { useMedia } from '../useMedia.js';
+
+const isMobile = useMedia("(max-width: 768px)");
+const isDesktop = useMedia("(min-width: 1200px)")
 
 const descriptors = ["a Creative", "a Thoughtful", "an Adaptable", "a Passionate"];
 const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 100 Mob Boss"];
@@ -9,6 +13,9 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 <template>
     <section class="about">
         <div class="about-body">
+            <div class="mobile--about-header">
+                <div class="header-text">About</div>
+            </div>
             <div class="bio-container">
                 <div class="row row-1">
                     <div class="col bio-img">
@@ -20,20 +27,20 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                         </div>
                         <div class="bio-sect-content">
                             <div class="qa-item single-line">
-                                <div class="question">Nickname: </div>
-                                <div class="answer">Hime</div>
+                                <div class="question">Title: </div>
+                                <div class="answer">Full Stack Dev</div>
+                            </div>
+                            <div class="qa-item single-line">
+                                <div class="question">Located: </div>
+                                <div class="answer">Dallas, TX</div>
                             </div>
                             <div class="qa-item single-line">
                                 <div class="question">Pronouns: </div>
                                 <div class="answer">She/Her</div>
                             </div>
                             <div class="qa-item single-line">
-                                <div class="question">Age: </div>
-                                <div class="answer">32</div>
-                            </div>
-                            <div class="qa-item single-line">
-                                <div class="question">Location: </div>
-                                <div class="answer">Dallas, Texas</div>
+                                <div class="question">Nickname: </div>
+                                <div class="answer">Hime</div>
                             </div>
                         </div>
                     </div>
@@ -48,10 +55,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                                 <div class="name">VueJS</div>
                                 <div class="level-container">
                                     <div class="level" style="width:50%;">
-                                        <font-awesome-layers class="fa-layers fa-fw fa-lg level-marker">
-                                            <font-awesome-icon icon="fa-solid fa-star" :style="{color:'yellow'}" />
-                                            <font-awesome-icon icon="fa-regular fa-star" :style="{color:'black'}" />
-                                        </font-awesome-layers>
                                     </div>
                                 </div>
                             </div>
@@ -59,10 +62,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                                 <div class="name">HTML + CSS</div>
                                 <div class="level-container">
                                     <div class="level" style="width:80%;">
-                                        <font-awesome-layers class="fa-layers fa-fw fa-lg level-marker">
-                                            <font-awesome-icon icon="fa-solid fa-star" :style="{color:'yellow'}" />
-                                            <font-awesome-icon icon="fa-regular fa-star" :style="{color:'black'}" />
-                                        </font-awesome-layers>
                                     </div>
                                 </div>
                             </div>
@@ -70,10 +69,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                                 <div class="name">JavaScript</div>
                                 <div class="level-container">
                                     <div class="level" style="width:70%;">
-                                        <font-awesome-layers class="fa-layers fa-fw fa-lg level-marker">
-                                            <font-awesome-icon icon="fa-solid fa-star" :style="{color:'yellow'}" />
-                                            <font-awesome-icon icon="fa-regular fa-star" :style="{color:'black'}" />
-                                        </font-awesome-layers>
                                     </div>
                                 </div>
                             </div>
@@ -81,10 +76,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                                 <div class="name">C#</div>
                                 <div class="level-container">
                                     <div class="level" style="width:90%;">
-                                        <font-awesome-layers class="fa-layers fa-fw fa-lg level-marker">
-                                            <font-awesome-icon icon="fa-solid fa-star" :style="{color:'yellow'}" />
-                                            <font-awesome-icon icon="fa-regular fa-star" :style="{color:'black'}" />
-                                        </font-awesome-layers>
                                     </div>
                                 </div>
                             </div>
@@ -92,10 +83,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                                 <div class="name">Figma</div>
                                 <div class="level-container">
                                     <div class="level" style="width:50%;">
-                                        <font-awesome-layers class="fa-layers fa-fw fa-lg level-marker">
-                                            <font-awesome-icon icon="fa-solid fa-star" :style="{color:'yellow'}" />
-                                            <font-awesome-icon icon="fa-regular fa-star" :style="{color:'black'}" />
-                                        </font-awesome-layers>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +90,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                     </div>
                     <div class="bio-sect-no-header bio-typing col">
                         <div class="bio-sect-head-text">
-                            <div class="message-text">Hi, I'm Lauren - </div>
+                            <div class="message-text">I'm Lauren </div>
                             <VueWriter :array="descriptors" class="typing descriptors"></VueWriter>
                             <VueWriter :array="roles" class="typing roles"></VueWriter>
                         </div>
@@ -116,33 +103,32 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                         </div>
                         <div class="bio-sect-content">
                             <div class="qa-item full-width-line single-line">
-                                <font-awesome-icon icon="fa-solid fa-cookie-bite" size="xl"></font-awesome-icon>
-                                <div class="answer">Cooking & Baking</div>
+                                <div class="answer">
+                                    <span>
+                                        <font-awesome-icon icon="fa-solid fa-cookie-bite" size="xl"></font-awesome-icon>
+                                    </span> Cooking & Baking</div>
                             </div>
                             <div class="qa-item full-width-line single-line">
-                                <div class="answer">Virtual & Tabletop Gaming</div>
-                                <font-awesome-icon icon="fa-brands fa-d-and-d" size="xl"></font-awesome-icon>
-                                <font-awesome-icon icon="fa-solid fa-gamepad" size="xl"></font-awesome-icon>
+                                <div class="answer">
+                                    <span><font-awesome-icon icon="fa-solid fa-gamepad" size="xl"></font-awesome-icon></span> Virtual & Tabletop Games <span><font-awesome-icon icon="fa-brands fa-d-and-d" size="xl"></font-awesome-icon></span>
+                                </div>
                             </div>
                             <div class="qa-item full-width-line single-line">
-                                <font-awesome-icon icon="fa-solid fa-book" size="xl"></font-awesome-icon>
-                                <div class="answer">Reading Sci-Fi & Fantasy</div>
+                                <div class="answer"><span><font-awesome-icon icon="fa-solid fa-book" size="xl"></font-awesome-icon></span> Sci-Fi & Fantasy</div>
                             </div>
                             <div class="qa-item full-width-line single-line">
-                                <div class="answer">Drawing & Making</div>
-                                <font-awesome-icon icon="fa-solid fa-pen-ruler" size="xl"></font-awesome-icon>
-                                <font-awesome-icon icon="fa-solid fa-hammer" size="xl"></font-awesome-icon>
+                                <div class="answer"><span><font-awesome-icon icon="fa-solid fa-pen-ruler" size="xl"></font-awesome-icon></span> Drawing & Crafting <span><font-awesome-icon icon="fa-solid fa-hammer" size="xl"></font-awesome-icon></span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col bio-sect bio-persona">
-                        <div class="bio-sect-header">
-                            <div class="bio-sect-head-text">Extras:</div>
-                        </div>
-                        <div class="bio-sect-content">
-                            <div><a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a></div>
-                        </div>
-                    </div>
+                    <button v-if="isMobile || isDesktop" class="resume-btn accent-btn">
+                        <a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a>
+                    </button>
+                </div>
+                <div v-if="!isMobile && !isDesktop" class="row row-4">
+                    <button class="resume-btn accent-btn">
+                        <a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a>
+                    </button>
                 </div>
             </div>
 
@@ -163,6 +149,41 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 <style scoped>
 @import url(../style.css);
 
+.resume-btn {
+    width: 100%;
+    background-color: var(--success-shade);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.resume-btn a {
+    font-family: 'Ellograph Bold';
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--neutral-shade);
+    text-shadow: none;
+    text-decoration: none;
+}
+
+.row-1 {
+    padding-top: 12px;
+}
+
+.mobile--about-header {
+    border-radius: 12px;
+    background-color: var(--success-shade);
+    border: 2px solid var(--neutral-shade);
+    box-shadow: 4px 4px var(--neutral-shade);
+
+    text-align: center;
+
+    margin-bottom: 1rem;
+}
+
+.header-text {
+    color: var(--neutral-shade);
+    font-size: 2rem;
+}
 
 .bio-container {
     display: flex;
@@ -180,16 +201,15 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 
 .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
-    height: 25vh;
 
     align-items: stretch;
 }
 
+
 .bio-img {
-    width: 30%;
-    grid-column: 1 / 2;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
@@ -207,7 +227,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 .bio-sect {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
 
     border: 2px solid var(--neutral-shade);
     border-radius: 8px;
@@ -225,20 +245,15 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     padding: 8px;
 }
 
-.bio-sect-no-header {
-    padding: 20px;
-    border-radius: 8px;
-    background-color: var(--accent-shade-light);
 
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-
-    border: 2px solid var(--neutral-shade);
-}
 
 .bio-sect-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 10px 20px;
+    height: 100%;
+    overflow: hidden;
 }
 
 .single-line {
@@ -248,6 +263,8 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     gap: 8px;
     margin-bottom: 8px;
     align-items: center;
+
+    text-align: center;
 }
 
 .question {
@@ -257,7 +274,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 
 .answer {
     background-color: var(--accent-shade-light);
-    padding: 2px 20px;
+    padding: 2px 10px;
     border-radius: 20px;
     width: 60%;
     flex: 1;
@@ -265,13 +282,9 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 
 .full-width-line .answer {
     background-color: var(--accent-shade-light);
-    padding: 2px 20px;
-    border-radius: 20px;
-    width: 80%;
-}
-
-.bio-skills {
-    width: 65%;
+    padding: 4px 12px;
+    border-radius: 16px;
+    width: 100%;
 }
 
 .name {
@@ -302,15 +315,25 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     top: -200%;
 }
 
+.bio-sect-no-header {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--accent-shade-light);
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid var(--neutral-shade);
+}
+
 .bio-typing {
-    max-width: 35%;
     text-align: center;
     text-wrap: pretty;
     overflow: hidden;
 }
 
 .typing {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding-top: 8px;
 }
 
@@ -324,36 +347,11 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     text-shadow: var(--primary-shade-60) 2px 2px;
 }
 
-@media (min-width: 1900px) {
+/* Tablets/iPads */
+
+@media (min-width: 481px) and (max-width:768px) {
     .bio-container {
-        width: 50vw;
-        height: 80vh;
-    }
-
-    .message-text {
-        font-size: 2rem;
-    }
-
-    .typing {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 1080px) {
-    .bio-container {
-        width: 90vw;
-    }
-}
-
-@media (max-width: 769px) {
-    .bio-container {
-        width: 85vw;
-    }
-
-    .row {
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
+        width: 80vw;
     }
     
     .col {
@@ -363,8 +361,91 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     .bio-sect-head-text {
         width: 100%;
     }
+
     .bio-typing {
-        max-width: 90%;
+        width: 50%;
+        align-self: center;
+    }
+}
+
+/* Small Screen/Laptop */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .bio-container {
+        width: 80vw;
+        height: 100vh;
+    }
+
+    .row {
+        flex-direction: row;
+        height: 25vh;
+    }
+
+    .bio-typing {
+        width: 60%;
+        padding: 0;
+    }
+
+    .bio-sect {
+        height: 100%;
+    }
+
+    .row-2,
+    .row-3 {
+        height: 100%;
+    }
+    .row-4 {
+        height: 10%;
+    }
+
+    .bio-img {
+        width: 50%;
+    }
+
+    .footer {
+        width: 60%
+    }
+
+}
+
+/* XL/TV */
+@media (min-width: 1201px) {
+    .bio-container {
+        width: 50vw;
+    }
+
+    .row {
+        flex-direction: row;
+        height: 25vh;
+    }
+
+    .bio-typing {
+        width: 50%;
+        align-self: center;
+        height: 86%;
+    }
+
+    .message-text {
+        font-size: 2.4rem;
+    }
+
+    .typing {
+        font-size: 2rem;
+    }
+
+    .resume-btn {
+        width: 40%;
+    }
+
+    .footer {
+        width: 60%;
+    }
+
+    .bio-sect {
+        gap: 8px;
+    }
+
+    .bio-img {
+        width: 40%;
     }
 }
 </style>
