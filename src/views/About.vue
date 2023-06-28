@@ -8,8 +8,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 
 <template>
     <section class="about">
-        <div class="about-header">
-        </div>
         <div class="about-body">
             <div class="bio-container">
                 <div class="row row-1">
