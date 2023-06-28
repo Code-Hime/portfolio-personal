@@ -5,6 +5,7 @@
   /* Primary - Purple */
   --primary-shade: oklch(57.02% 0.18 301.71);
   --primary-shade-60: oklch(57.02% 0.18 301.71 / .6);
+  --primary-shade-10: oklch(57.02% 0.18 301.71 / .1);
 
   /* Accent - Lilac */
   --accent-shade: oklch(85% 0.0856 333.46);
@@ -92,6 +93,13 @@ button:focus-visible {
 .accent-text a {
   color: var(--accent-shade-light) !important;
   font-family: 'Ellograph Regular';
+}
+
+a {
+  text-transform: uppercase;
+  color: var(--primary-shade);
+  font-family: 'Ellograph Demi Bold';
+  text-shadow: var(--primary-shade-60) 1px 1px;
 }
 
 .footer {
