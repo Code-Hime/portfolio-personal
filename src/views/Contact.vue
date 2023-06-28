@@ -1,5 +1,5 @@
 <script setup>
-
+import Footer from '../components/Footer.vue';
 </script>
 
 <template>
@@ -13,7 +13,7 @@
             <a target="_blank" href="tel:2819108934">281.910.8934</a>
         </div>
         <div class="contact-footer footer">
-            <p>Let's chat!</p>
+            <Footer>Let's chat!</Footer>
         </div>
     </section>
 </template>

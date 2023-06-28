@@ -1,5 +1,7 @@
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Footer from '../components/Footer.vue';
+
 const descriptors = ["a Creative", "a Thoughtful", "an Adaptable", "a Passionate"];
 const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 100 Mob Boss"];
 </script>
@@ -140,7 +142,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                             <div class="bio-sect-head-text">Extras:</div>
                         </div>
                         <div class="bio-sect-content">
-                            <div>Describe your personality in 3 words: <span></span></div>
+                            <div><a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a></div>
                         </div>
                     </div>
                 </div>
@@ -153,7 +155,9 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
             <a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a> --> 
         </div>
         <div class="about-footer footer">
-            <p>Questions? Comments? Magic the Gathering strategies? Interested in working together?</p><router-link to="/contact">Get in touch...</router-link>
+            <Footer>
+                <p>Questions? Comments? Magic the Gathering strategies? Interested in working together?</p><router-link to="/contact">Get in touch...</router-link>
+            </Footer>
         </div>
     </section>
 </template>
@@ -161,11 +165,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 <style scoped>
 @import url(../style.css);
 
-.bio-portrait {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
 
 .bio-container {
     display: flex;
@@ -198,6 +197,13 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     flex-direction: row;
     border: 2px solid var(--neutral-shade);
     border-radius: 8px;
+}
+
+.bio-portrait {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: scaleX(-1);
 }
 
 .bio-sect {
@@ -256,6 +262,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     padding: 2px 20px;
     border-radius: 20px;
     width: 60%;
+    flex: 1;
 }
 
 .full-width-line .answer {
@@ -280,6 +287,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     width: 60%;
     position: relative;
     vertical-align: center;
+    flex: 1;
 }
 
 .level {
@@ -316,15 +324,6 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     font-size: 1.6rem;
     font-family: Ellograph Demi Bold;
     text-shadow: var(--primary-shade-60) 2px 2px;
-}
-
-.about-footer p {
-    font-family: 'Ellograph Thin';
-    font-size: 1.2rem;
-}
-
-a {
-    text-transform: uppercase;
 }
 
 @media (min-width: 1900px) {

@@ -1,5 +1,5 @@
 <script setup>
-
+import Footer from '../components/Footer.vue';
 </script>
 
 <template>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="home-footer footer">
-            hi, from down here!
+            <Footer>hi, from down here!</Footer>
         </div>
     </section>
 </template>
