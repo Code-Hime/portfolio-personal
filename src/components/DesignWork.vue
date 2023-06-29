@@ -24,16 +24,30 @@
 <style scoped>
 .design-work {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+    width: 70vw;
+    gap: 1rem;
+    flex-basis: 80%;
+
+    justify-content: center;
     align-items: center;
-    margin-top: 1.2rem;
+
+    margin-top: 2rem;
 }
 
 .design-item {
+    justify-self: center;
+    align-self: center;
+    flex-grow: 1;
+    aspect-ratio: 16 / 9;
     width: 100%;
+    height: 100%;
 }
 
 iframe {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-shade-dark);
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
 }
 </style>

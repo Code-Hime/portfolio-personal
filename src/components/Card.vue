@@ -23,9 +23,7 @@ const props = defineProps({
 });
 
 function getImageUrl(name) {
-    console.log(name);
     let newURL = `src/assets/${name}`;
-    console.log(newURL);
     return newURL;
 };
 
@@ -52,23 +50,21 @@ function getImageUrl(name) {
 <style scoped>
 
 .card {
-    width: 80vw;
+    width: 100%;
 
     border-radius: 12px;
     border: 2px solid var(--neutral-shade);
     box-shadow: 4px 4px var(--neutral-shade);
-    padding: 0.6em 1.2em;
 
     background-color: var(--accent-shade);
     color: var(--neutral-shade);
-    margin: 1em;
 
     display: flex;
     flex-direction: column;
 }
 
 .thumb-img {
-    margin: 0.8em;
+    margin: 1em;
     display: flex;
     justify-content: center;
 
@@ -87,10 +83,9 @@ function getImageUrl(name) {
 }
 
 .desc-text {
-    margin: 0 0.8em;
+    margin: 0 1em 1em 1em;
     background-color: var(--accent-shade-light);
     border-radius: 12px;
-    width: 100%;
     align-self: center;
     text-wrap: pretty;
 }
@@ -101,12 +96,12 @@ function getImageUrl(name) {
 }
 
 .card-header {
-    margin: 0 2.4em;
+    margin: 1em 2.4em 0 2.4em;
     text-align: center;
 }
 
 .header-text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin: 0;
     text-shadow: var(--primary-shade-60) 2px 2px;
 }
@@ -118,6 +113,7 @@ function getImageUrl(name) {
     background-color: var(--accent-shade-light);
     border-radius: 12px;
     justify-content: center;
+    margin: 1em 1em 0 1em;
 }
 
 .roles-title {
@@ -132,9 +128,15 @@ function getImageUrl(name) {
     padding-left: 8px;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 483px) {
     .header-text {
         font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .header-text {
+        font-size: 2.4rem;
     }
 }
 </style>

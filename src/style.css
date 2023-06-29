@@ -69,11 +69,21 @@
   background: var(--primary-shade-light);
 }
 
+.container-view {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
 section {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  width: 70vw;
 }
 
 h1 {
@@ -136,11 +146,17 @@ a {
   padding-right: 2rem;
 }
 
+.card {
+  width: 100%;
+}
+
+.work-container {
+  width: 100%;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: .2rem 1.2rem;
-  
 }
 
 /*

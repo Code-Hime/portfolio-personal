@@ -49,7 +49,8 @@ function closeSidebarPanel() {
     height: 25%;
     z-index: 999;
     padding: 1.2rem;
-    width: 70vw;
+    width: 70%;
+    max-width: 500px;
 }
 
 .sidebar-backdrop {

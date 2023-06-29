@@ -39,14 +39,17 @@ function closeSidebarPanel() {
 
 <style scoped>
 @import url('./style.css');
+
 .nav-group {
   display: flex;
   flex-direction: row;
   gap: 2em;
   font-family: 'Ellograph Thin';
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   justify-content: space-between;
   text-transform: uppercase;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 
 nav a {
@@ -108,8 +111,8 @@ nav a:focus {
 }
 
 .mobile--nav-logo {
-  padding-top: 0.2rem;
   font-size: 1.6rem;
+  align-self: center;
 }
 
 .mobile--nav {

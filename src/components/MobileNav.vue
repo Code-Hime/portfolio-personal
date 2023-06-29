@@ -40,14 +40,16 @@ button:focus {
 
 .mobile--nav-container {
     background-color: var(--accent-shade);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 2px;
+    height: 100%;
 
     border: 2px solid var(--neutral-shade);
     box-shadow: 4px 4px var(--neutral-shade);
 }
 
 .mobile--nav-button {
+    margin-top: 6px;
     position: relative;
     height: 30px;
     width: 32px;
@@ -65,8 +67,8 @@ button:focus {
     background-color: var(--neutral-shade);
     position: absolute;
     top: 50%;
-    right: 6px;
-    left: 6px;
+    right: 10px;
+    left: 10px;
     height: 2px;
     width: auto;
     margin-top: -1px;
