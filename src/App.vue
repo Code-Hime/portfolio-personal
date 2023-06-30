@@ -46,10 +46,10 @@ function closeSidebarPanel() {
   gap: 2em;
   font-family: 'Ellograph Thin';
   font-size: 1.4rem;
-  justify-content: space-between;
+  justify-content: space-around;
   text-transform: uppercase;
-  margin-right: 4px;
-  margin-left: 4px;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 nav a {
@@ -60,7 +60,7 @@ nav a.nav-link::before {
   content: '';
   display: block;
   height: 2px;
-  background-color: var(--accent-shade-light);
+  background-color: var(--success-shade);
 
   position: absolute;
   top: 0;
@@ -85,39 +85,29 @@ nav a:focus::before {
   width: 100%;
 }
 
-/*
-.container-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  gap: 8px;
-}
-*/
-
 nav a {
   text-decoration: none;
   color: var(--primary-text-shade);
 }
 
 nav a:hover {
-  color: var(--accent-shade);
+  color: var(--caution-shade);
 }
 
 nav a:focus {
-  color: var(--accent-shade-light);
+  color: var(--caution-shade);
 }
 
 .mobile--nav-logo {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   align-self: center;
 }
 
 .mobile--nav {
   display: flex;
   flex-direction: row;
+
+  justify-content: space-around;
 }
 
 div.sidebar-panel-nav {

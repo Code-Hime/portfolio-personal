@@ -16,7 +16,7 @@ import Header from '../components/Header.vue';
             </div>
             <div class="contact-body">
                 <div class="contact-group">
-                    <a target="_blank" href="mailto:laurendoss@devforge.dev?subject=Let's work together" class="email">laurendoss<font-awesome-icon icon="fa-solid fa-at" />devforge.dev</a>
+                    <a target="_blank" href="mailto:lauren@doss.codes?subject=Let's work together" class="email">lauren<font-awesome-icon icon="fa-solid fa-at" />doss.codes</a>
                     <div class="icon-group">
                         <a target="_blank" href="https://github.com/Code-Hime"><font-awesome-icon icon="fa-brands fa-github" class="contact-icon" /></a>
                         <a target="_blank" href="https://www.linkedin.com/in/lauren-grills-76484893/"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>

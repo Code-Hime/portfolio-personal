@@ -4,7 +4,7 @@ import App from './App.vue';
 import router from './router';
 import VueWriter from "vue-writer";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome';
+
 
 /* import specific icons */
 import 
@@ -30,7 +30,4 @@ library.add(faBrain, faStar, faStarRegular, faCake, faCookieBite, faGamepad, faB
 createApp(App)
 .use(router)
 .use(VueWriter)
-.use('font-awesome-icon', FontAwesomeIcon)
-.use('font-awesome-layers', FontAwesomeLayers)
-.use('font-awesome-layers-text', FontAwesomeLayersText)
 .mount('#app')

@@ -25,7 +25,6 @@
 .design-work {
     display: flex;
     flex-flow: row wrap;
-    width: 70vw;
     gap: 1rem;
     flex-basis: 80%;
 

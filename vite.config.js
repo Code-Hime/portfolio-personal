@@ -1,7 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  build: {
+    minify: true,
+    minifyIdentifiers: true,
+    minifySyntax: true
+  },
+  plugins: [vue(), FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText]
 })
+
+
