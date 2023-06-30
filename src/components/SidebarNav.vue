@@ -34,18 +34,27 @@ function closeSidebarPanel() {
 .slide-enter,
 .slide-leave-to {
     transform: translateX(-100%);
-    transition: all 150ms ease-in 0s
+    transition: all 200ms ease-in 0s
 }
 
 .sidebar-panel {
     overflow-y: auto;
-    background-color: rgb(var(--primary-btn-rgb));
+    background-color: var(--caution-shade);
+    border: 2px solid var(--neutral-shade);
+    box-shadow: 4px 4px var(--neutral-shade);
+    border-radius: 12px;
     position: fixed;
-    left: 0;
-    top: 50px;
-    height: 90vh;
+    right: 18%;
+    top: 12%;
+    height: 25%;
     z-index: 999;
-    padding: 3rem 20px 2rem 20px;
-    width: 100vw;
+    padding: 1.2rem;
+    width: 70%;
+    max-width: 500px;
+}
+
+.sidebar-backdrop {
+    width: 100lvw;
+    height: 100lvh;
 }
 </style>

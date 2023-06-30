@@ -6,6 +6,8 @@
   --primary-shade: oklch(57.02% 0.18 301.71);
   --primary-shade-60: oklch(57.02% 0.18 301.71 / .6);
   --primary-shade-10: oklch(57.02% 0.18 301.71 / .1);
+  --primary-shade-light: oklch(70% 0.18 301.71);
+  --primary-shade-dark: oklch(30% 0.18 301.71);
 
   /* Accent - Lilac */
   --accent-shade: oklch(85% 0.0856 333.46);
@@ -44,13 +46,44 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-shade-dark);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-shade-light);
+  border-radius: 12px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-shade-light);
+}
+
+.container-view {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin-top: 2rem;
   align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  width: 80vw;
 }
 
 h1 {
@@ -92,7 +125,7 @@ button:focus-visible {
 }
 
 .accent-text a {
-  color: var(--accent-shade-light) !important;
+  color: var(--caution-shade) !important;
   font-family: 'Ellograph Regular';
 }
 
@@ -104,16 +137,26 @@ a {
 }
 
 .footer {
-  margin-top: 4rem;
-  width: 50%;
+  margin-top: auto;
+  min-width: 50%;
+  max-width: 90%;
   text-align: right;
   margin-left: auto;
+  text-wrap: pretty;
+  padding-right: 2rem;
+}
+
+.card {
+  width: 100%;
+}
+
+.work-container {
+  width: 100%;
 }
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: .2rem 1.2rem;
 }
 
 /*

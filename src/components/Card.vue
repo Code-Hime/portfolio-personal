@@ -23,9 +23,7 @@ const props = defineProps({
 });
 
 function getImageUrl(name) {
-    console.log(name);
     let newURL = `src/assets/${name}`;
-    console.log(newURL);
     return newURL;
 };
 
@@ -38,7 +36,7 @@ function getImageUrl(name) {
         </div>
         <div class="roles">
             <p class="roles-title">Role(s):</p>
-            <span>{{ roleText }}</span>
+            <p>{{ roleText }}</p>
         </div>
         <div class="thumb-img">
             <img :alt=imageAltText :src="getImageUrl(imageUrl)" />
@@ -50,34 +48,30 @@ function getImageUrl(name) {
 </template>
 
 <style scoped>
+
 .card {
+    width: 100%;
+
     border-radius: 12px;
     border: 2px solid var(--neutral-shade);
     box-shadow: 4px 4px var(--neutral-shade);
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
+
     background-color: var(--accent-shade);
     color: var(--neutral-shade);
-    cursor: pointer;
-    transition: border-color 0.25s;
-    width: 80vh;
-    margin: 1em;
 
     display: flex;
     flex-direction: column;
 }
 
 .thumb-img {
-    margin: 0.8em;
+    margin: 1em;
     display: flex;
     justify-content: center;
 
 }
 
 .thumb-img img {
-    width: 90%;
+    width: 100%;
     border-radius: 12px;
     border: 4px solid var(--primary-shade);
 }
@@ -89,22 +83,25 @@ function getImageUrl(name) {
 }
 
 .desc-text {
-    margin: 0 0.8em;
+    margin: 0 1em 1em 1em;
+    background-color: var(--accent-shade-light);
+    border-radius: 12px;
+    align-self: center;
+    text-wrap: pretty;
 }
 
 .desc-text p {
-    padding: 0 0.8em;
-    margin: 0.8em;
     text-shadow: var(--primary-shade-60) 1px 1px;
+    padding: 0px 8px;
 }
 
 .card-header {
-    margin: 0 2.4em;
-    text-align: right;
+    margin: 1em 2.4em 0 2.4em;
+    text-align: center;
 }
 
 .header-text {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin: 0;
     text-shadow: var(--primary-shade-60) 2px 2px;
 }
@@ -112,20 +109,34 @@ function getImageUrl(name) {
 .roles {
     display: flex;
     flex-direction: row;
-    justify-content: end;
     gap: 4px;
-
-    padding-left: 0.2em;
-    margin: 0 2.4em;
+    background-color: var(--accent-shade-light);
+    border-radius: 12px;
+    justify-content: center;
+    margin: 1em 1em 0 1em;
 }
 
 .roles-title {
     font-family: "Ellograph Bold";
 }
 
+
 .roles p,
 .roles span {
     margin-top: 2px;
     margin-bottom: 0;
+    padding-left: 8px;
+}
+
+@media (min-width: 483px) {
+    .header-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .header-text {
+        font-size: 2.4rem;
+    }
 }
 </style>

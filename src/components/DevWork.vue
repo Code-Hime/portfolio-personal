@@ -4,9 +4,8 @@ import Card from './Card.vue';
 
 <template>
     <div class="dev-work work-container">
-        <h2>Development</h2>
         <Card 
-            projectName="QuickNeonSigns.com"
+            projectName="Quick Neon Signs"
             imageUrl="quickneondesigner.png"
             imageAltText="Screenshot of the custom neon sign designer from QuickNeonSigns.com. Left screen shows preview for neon sign selections with glowing pink sci-fi font that says 'HIRE ME!'"
             descText="Web page built with HTML, CSS, and JavaScript that allows customers of a neon sign shop design their own custom signs with ability to preview the text, font, color, and size live."
@@ -22,4 +21,5 @@ import Card from './Card.vue';
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

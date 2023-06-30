@@ -28,7 +28,7 @@
     font-family: 'Ellograph Demi Bold';
 }
 
-  .sb:before {
+.sb:before {
     content: "";
     width: 0px;
     height: 0px;
@@ -39,9 +39,9 @@
     border-bottom: 30px solid transparent;
     bottom: 30%;
     right: -80px;
-  }
+}
 
-   .sb:after {
+.sb:after {
     content: "";
     width: 0px;
     height: 0px;
@@ -52,5 +52,9 @@
     border-bottom: 30px solid transparent;
     bottom: 32%;
     right: -72px;
-  }
+}
+
+:slotted(p) {
+  width: 100%;
+}
 </style>

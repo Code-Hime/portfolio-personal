@@ -16,7 +16,9 @@ import Footer from '../components/Footer.vue';
             </div>
         </div>
         <div class="home-footer footer">
-            <Footer>hi, from down here!</Footer>
+            <Footer>
+                <p>hi, from down here!</p>
+            </Footer>
         </div>
     </section>
 </template>
