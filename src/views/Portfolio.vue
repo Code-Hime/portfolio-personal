@@ -27,8 +27,10 @@ function updateCurrentSelection(type)
         </Header>
         <div class="portfolio-header">
             <div class="header-text">Explore my work as a </div>
-            <button class="accent-btn work-btn" @click="[updateCurrentSelection('dev'), (e => e.target.classList.toggle('active'))]">Developer</button>
-            <button class="work-btn" @click="updateCurrentSelection('design')" :class="{active: isActive}">Designer</button>
+            <div class="work-btn-grp">
+                <button class="accent-btn work-btn" @click="[updateCurrentSelection('dev'), (e => e.target.classList.toggle('active'))]">Developer</button>
+                <button class="work-btn" @click="updateCurrentSelection('design')" :class="{active: isActive}">Designer</button>
+            </div>
         </div>
         <div v-if="currentSelection !== ''" class="portfolio-body">
             <DevWork v-if="currentSelection === 'dev'" />
@@ -49,7 +51,7 @@ function updateCurrentSelection(type)
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
-    flex-basis: 100px;
+
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -67,22 +69,22 @@ function updateCurrentSelection(type)
 
 .work-btn {
     font-size: 1.4rem;
-    align-content: stretch;
+    flex-basis: 200px;
+    flex-grow: 2;
+}
+
+.work-btn-grp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    justify-content: center;
+    align-content: center;
 }
 
 .active {
     background-color: var(--caution-shade) !important;
 }
-
-/* desktop
-.portfolio-header {
-    display: flex;
-    flex-direction: row;
-    gap: 1.2rem;
-    justify-content: center;
-}
-
-.header-text {
-    font-size: 2rem;
-} */
 </style>

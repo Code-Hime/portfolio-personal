@@ -21,12 +21,6 @@ const props = defineProps({
         default: ""
     }
 });
-
-function getImageUrl(name) {
-    let newURL = `src/assets/${name}`;
-    return newURL;
-};
-
 </script>
 
 <template>
@@ -39,7 +33,7 @@ function getImageUrl(name) {
             <p>{{ roleText }}</p>
         </div>
         <div class="thumb-img">
-            <img :alt=imageAltText :src="getImageUrl(imageUrl)" />
+            <img :alt=imageAltText :src=imageUrl />
         </div>
         <div class="desc-text">
             <p>{{descText}}</p>

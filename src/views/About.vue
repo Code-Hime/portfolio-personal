@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
 import { useMedia } from '../useMedia.js';
+import ResumePdf from '../assets/DossLauren_Resume.pdf';
 
 const isMobile = useMedia("(max-width: 768px)");
 const isDesktop = useMedia("(min-width: 1500px)")
@@ -118,9 +119,11 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
                     </div>
                 </div>
                 <div class="col bio-cta">
-                    <button class="resume-btn accent-btn">
-                        <a href="src/assets/DossLauren_Resume.pdf" target="_blank">View Resume</a>
-                    </button>
+                    <a :href="ResumePdf" target="_blank">
+                        <button class="resume-btn accent-btn">
+                            View Resume
+                        </button>
+                    </a>
                 </div>
 <!--             <div v-if="!isMobile && !isDesktop" class="row row-4">
                     <button class="resume-btn accent-btn">
@@ -186,11 +189,11 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
     background-color: var(--success-shade);
     text-align: center;
     margin-bottom: 8px;
-    height: 95%;
+    height: 98%;
     align-self: stretch;
 }
 
-.resume-btn a {
+.bio-cta a {
     font-family: 'Ellograph Bold';
     font-size: 1.4rem;
     text-transform: uppercase;
