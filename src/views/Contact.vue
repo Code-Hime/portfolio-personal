@@ -19,7 +19,7 @@ import Header from '../components/Header.vue';
                     <a target="_blank" href="mailto:lauren@doss.codes?subject=Let's work together" class="email">lauren<font-awesome-icon icon="fa-solid fa-at" />doss.codes</a>
                     <div class="icon-group">
                         <a target="_blank" href="https://github.com/Code-Hime"><font-awesome-icon icon="fa-brands fa-github" class="contact-icon" /></a>
-                        <a target="_blank" href="https://www.linkedin.com/in/lauren-grills-76484893/"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/lauren-grills-doss-76484893/"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>
                         <a target="_blank" href="https://www.figma.com/@himecchi"><font-awesome-icon icon="fa-brands fa-figma" class="contact-icon" /></a>
                         <a target="_blank" href="https://twitter.com/code_hime"><font-awesome-icon icon="fa-brands fa-twitter" class="contact-icon" /></a>
                     </div>
