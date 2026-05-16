@@ -6,7 +6,7 @@ export const APP_CONFIG = {
   email: 'lauren@doss.codes',
   location: 'Dallas, TX',
   pronouns: 'She/Her',
-  nickname: 'Hime'
+  pet: 'Mako'
 } as const
 
 export const SOCIAL_LINKS = {
@@ -20,9 +20,10 @@ export const SOCIAL_LINKS = {
 } as const
 
 export const SKILLS = [
-  { name: 'VueJS', level: 50, category: 'frontend' as const },
+  { name: 'Vue', level: 90, category: 'frontend' as const },
   { name: 'HTML + CSS', level: 80, category: 'frontend' as const },
-  { name: 'JavaScript', level: 70, category: 'frontend' as const },
+  { name: 'TypeScript', level: 90, category: 'frontend' as const },
+  { name: 'JavaScript', level: 90, category: 'frontend' as const },
   { name: 'C#', level: 90, category: 'backend' as const },
   { name: 'Figma', level: 50, category: 'design' as const }
 ] as const

@@ -1,19 +1,14 @@
-<script setup>
-import { ref } from 'vue'
-import DevWork from '~/components/DevWork.vue'
-import DesignWork from '~/components/DesignWork.vue'
-import Footer from '~/components/Footer.vue'
-import Header from '~/components/Header.vue'
+<script setup lang="ts">
+definePageMeta({ layout: 'default' })
+useSeoMeta({
+  title: 'Portfolio — Lauren Doss',
+  description: 'Development and design work by Lauren Doss.',
+})
 
-let currentSelection = ref("")
-let isActive = false
+const currentSelection = ref<string>('')
 
-function updateCurrentSelection(type) {
-  if (type === currentSelection.value) {
-    currentSelection.value = ""
-  } else {
-    currentSelection.value = type
-  }
+function updateCurrentSelection(type: string) {
+  currentSelection.value = currentSelection.value === type ? '' : type
 }
 </script>
 
@@ -25,8 +20,8 @@ function updateCurrentSelection(type) {
     <div class="portfolio-header">
       <div class="header-text">Explore my work as a </div>
       <div class="work-btn-grp">
-        <button class="accent-btn work-btn" @click="[updateCurrentSelection('dev'), (e => e.target.classList.toggle('active'))]">Developer</button>
-        <button class="work-btn" @click="updateCurrentSelection('design')" :class="{active: isActive}">Designer</button>
+        <button class="accent-btn work-btn" :class="{ active: currentSelection === 'dev' }" @click="updateCurrentSelection('dev')">Developer</button>
+        <button class="work-btn" :class="{ active: currentSelection === 'design' }" @click="updateCurrentSelection('design')">Designer</button>
       </div>
     </div>
     <div v-if="currentSelection !== ''" class="portfolio-body">

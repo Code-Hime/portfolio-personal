@@ -1,18 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  compatibilityDate: '2024-09-07',
-  
+  compatibilityDate: '2026-05-15',
+
   // Modules
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/image',
   ],
-  
+
   // CSS
   css: ['~/assets/css/main.css'],
-  
+
   // App configuration
   app: {
     head: {
@@ -26,57 +27,48 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'Lauren Doss - Portfolio' },
         { property: 'og:description', content: 'Full Stack Developer & Designer Portfolio' },
         { property: 'og:type', content: 'website' },
-        { name: 'twitter:card', content: 'summary_large_image' }
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
-    }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    },
   },
-  
+
   // Google Fonts
   googleFonts: {
     families: {
-      'Inter': [400, 500, 600, 700]
-    }
+      Inter: [400, 500, 600, 700],
+    },
   },
-  
+
   // TypeScript
   typescript: {
     strict: true,
-    typeCheck: true
+    typeCheck: true,
   },
-  
-  // Build optimization
-  build: {
-    transpile: ['vue-writer']
-  },
-  
+
   // Vite configuration
   vite: {
-    build: {
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true
-        }
-      }
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "~/assets/scss/variables" as *;'
-        }
-      }
+    optimizeDeps: {
+      include: [
+        '@fortawesome/fontawesome-svg-core',
+        '@fortawesome/free-brands-svg-icons',
+        '@fortawesome/free-regular-svg-icons',
+        '@fortawesome/free-solid-svg-icons',
+        '@fortawesome/vue-fontawesome',
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'vue-writer',
+      ]
     }
   },
-  
+
   // Runtime config
   runtimeConfig: {
     public: {
       appName: 'Lauren Doss Portfolio',
-      appVersion: '1.0.0'
-    }
-  }
+      appVersion: '1.0.0',
+    },
+  },
 })

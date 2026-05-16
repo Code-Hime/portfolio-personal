@@ -1,8 +1,11 @@
-<script setup>
-import Footer from '~/components/Footer.vue'
+<script setup lang="ts">
+definePageMeta({
+  redirect: { path: '/about', statusCode: 301 },
+})
 </script>
 
 <template>
+  <!--
   <section class="home">
     <div class="home-header">
       <h1 class="hello">
@@ -21,6 +24,7 @@ import Footer from '~/components/Footer.vue'
       </Footer>
     </div>
   </section>
+  -->
 </template>
 
 <style scoped>
@@ -31,6 +35,6 @@ import Footer from '~/components/Footer.vue'
 .button-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 </style>

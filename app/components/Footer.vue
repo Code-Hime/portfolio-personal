@@ -1,4 +1,4 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="footer-container sb">
@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .footer-container {
   border-radius: 12px;
   border: 2px solid var(--neutral-shade);

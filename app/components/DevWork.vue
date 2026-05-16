@@ -1,6 +1,4 @@
-<script setup>
-import Card from './Card.vue'
-// Images are now in public folder, so we reference them directly
+<script setup lang="ts">
 const QuickNeonImg = '/quickneondesigner.png'
 const BardAppImg = '/bard-old-inspire.png'
 </script>

@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Ellograph Regular";
+  src: url("/fonts/EllographCF-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Bold";
+  src: url("/fonts/EllographCF-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Bold Italic";
+  src: url("/fonts/EllographCF-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Demi Bold";
+  src: url("/fonts/EllographCF-DemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Demi Bold Italic";
+  src: url("/fonts/EllographCF-DemiBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Extra Bold";
+  src: url("/fonts/EllographCF-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Extra Bold Italic";
+  src: url("/fonts/EllographCF-ExtraBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Extra Light";
+  src: url("/fonts/EllographCF-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Extra Light Italic";
+  src: url("/fonts/EllographCF-ExtraLightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Heavy";
+  src: url("/fonts/EllographCF-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Heavy Italic";
+  src: url("/fonts/EllographCF-HeavyItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Light";
+  src: url("/fonts/EllographCF-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Light Italic";
+  src: url("/fonts/EllographCF-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Regular Italic";
+  src: url("/fonts/EllographCF-RegularItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Thin";
+  src: url("/fonts/EllographCF-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ellograph Thin Italic";
+  src: url("/fonts/EllographCF-ThinItalic.woff") format("woff");
+}

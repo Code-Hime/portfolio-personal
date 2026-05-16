@@ -1,5 +1,4 @@
-<script setup>
-import { useNavigation } from '~/composables/useNavigation'
+<script setup lang="ts">
 
 const { isNavOpen, toggleNav } = useNavigation()
 

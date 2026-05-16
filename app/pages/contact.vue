@@ -1,7 +1,9 @@
-<script setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import Footer from '~/components/Footer.vue'
-import Header from '~/components/Header.vue'
+<script setup lang="ts">
+definePageMeta({ layout: 'default' })
+useSeoMeta({
+  title: 'Contact — Lauren Doss',
+  description: 'Get in touch with Lauren Doss — Full Stack Developer & Designer.',
+})
 </script>
 
 <template>

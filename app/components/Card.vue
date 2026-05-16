@@ -1,25 +1,16 @@
-<script setup>
-const props = defineProps({
-  imageUrl: {
-    type: String,
-    default: "/"
-  },
-  imageAltText: {
-    type: String,
-    default: "No image loaded, placeholder image shown"
-  },
-  descText: {
-    type: String,
-    default: ""
-  },
-  projectName: {
-    type: String,
-    default: "Project Name"
-  },
-  roleText: {
-    type: String,
-    default: ""
-  }
+<script setup lang="ts">
+withDefaults(defineProps<{
+  imageUrl?: string
+  imageAltText?: string
+  descText?: string
+  projectName?: string
+  roleText?: string
+}>(), {
+  imageUrl: '/',
+  imageAltText: 'No image loaded, placeholder image shown',
+  descText: '',
+  projectName: 'Project Name',
+  roleText: '',
 })
 </script>
 

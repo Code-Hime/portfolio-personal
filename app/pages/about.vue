@@ -1,7 +1,9 @@
-<script setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import Footer from '~/components/Footer.vue'
-import Header from '~/components/Header.vue'
+<script setup lang="ts">
+definePageMeta({ layout: 'default' })
+useSeoMeta({
+  title: 'About — Lauren Doss',
+  description: 'Full Stack Developer, Designer, and creative problem solver based in Dallas, TX.',
+})
 const ResumePdf = '/DossLauren_Resume.pdf'
 
 const descriptors = ["a Creative", "a Thoughtful", "an Adaptable", "a Passionate"]
@@ -16,7 +18,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
       </Header>
       <div class="bio-container">
         <div class="col bio-img">
-          <img src="/portrait.jpg" class="bio-portrait border-sm" />
+          <NuxtImg src="/portrait.jpg" class="bio-portrait border-sm" alt="Lauren Doss" />
         </div>
         <div class="col bio-sect bio-basic border-sm">
           <div class="bio-sect-header">
@@ -36,8 +38,8 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
               <div class="answer">She/Her</div>
             </div>
             <div class="qa-item single-line">
-              <div class="question">Nickname: </div>
-              <div class="answer">Hime</div>
+              <div class="question">Pet's Name: </div>
+              <div class="answer">Mako</div>
             </div>
           </div>
         </div>
@@ -49,7 +51,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
             <div class="skill-item single-line">
               <div class="name">VueJS</div>
               <div class="level-container">
-                <div class="level" style="width:50%;">
+                <div class="level" style="width:90%;">
                 </div>
               </div>
             </div>
@@ -86,8 +88,10 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
         <div class="bio-sect-no-header bio-typing col border-sm">
           <div class="bio-sect-head-text">
             <div class="message-text">I'm Lauren </div>
-            <VueWriter :array="descriptors" class="typing descriptors"></VueWriter>
-            <VueWriter :array="roles" class="typing roles"></VueWriter>
+            <ClientOnly>
+              <VueWriter :array="descriptors" class="typing descriptors" />
+              <VueWriter :array="roles" class="typing roles" />
+            </ClientOnly>
           </div>
         </div>
         <div class="col bio-sect bio-likes border-sm">
