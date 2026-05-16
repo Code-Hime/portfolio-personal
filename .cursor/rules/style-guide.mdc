@@ -1,6 +1,0 @@
----
-alwaysApply: true
-description: Style Guide
----
-
-- Prefer using camelCase for variable names
