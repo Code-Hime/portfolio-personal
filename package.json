@@ -1,7 +1,7 @@
 {
   "name": "portfolio-personal",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
@@ -28,9 +28,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/test-utils": "^4.0.3",
     "@types/node": "^25.8.0",
     "@vitest/ui": "^4.1.6",
-    "jsdom": "^29.1.1",
+    "@vue/test-utils": "^2.4.10",
+    "happy-dom": "^20.9.0",
     "sass": "^1.99.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6",

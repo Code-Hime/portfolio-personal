@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const { isNavOpen, toggleNav } = useNavigation()
 
 const isActive = computed(() => {

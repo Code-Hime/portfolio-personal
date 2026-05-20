@@ -1,5 +1,8 @@
 README.md
-dist
 node_modules
-package-lock.json
 .git
+.nuxt
+.output
+.env
+.env.*
+dist

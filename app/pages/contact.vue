@@ -1,29 +1,31 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
 useSeoMeta({
-  title: 'Contact — Lauren Doss',
-  description: 'Get in touch with Lauren Doss — Full Stack Developer & Designer.',
+  title: `Contact — ${PROFILE.name}`,
+  description: `Get in touch with ${PROFILE.name} — ${PROFILE.description}.`,
 })
+
+const [emailLocal, emailDomain] = PROFILE.email.split('@')
 </script>
 
 <template>
   <section class="contact">
-    <Header>
+    <PageHeader>
       <div>Contact</div>
-    </Header>
-    <div class="contact-container">
+    </PageHeader>
+    <div class="contact-container shadow-box">
       <div class="contact-header">
         <h1>Let's Build Something Awesome Together!</h1>
         <h2>Get in Touch</h2>
       </div>
       <div class="contact-body">
         <div class="contact-group">
-          <a target="_blank" href="mailto:lauren@doss.codes?subject=Let's work together" class="email">lauren<font-awesome-icon icon="fa-solid fa-at" />doss.codes</a>
+          <a target="_blank" :href="`mailto:${PROFILE.email}?subject=Let's work together`" class="email">{{ emailLocal }}<font-awesome-icon icon="fa-solid fa-at" />{{ emailDomain }}</a>
           <div class="icon-group">
-            <a target="_blank" href="https://github.com/Code-Hime"><font-awesome-icon icon="fa-brands fa-github" class="contact-icon" /></a>
-            <a target="_blank" href="https://www.linkedin.com/in/lauren-grills-doss-76484893/"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>
-            <a target="_blank" href="https://www.figma.com/@himecchi"><font-awesome-icon icon="fa-brands fa-figma" class="contact-icon" /></a>
-            <a target="_blank" href="https://twitter.com/code_hime"><font-awesome-icon icon="fa-brands fa-twitter" class="contact-icon" /></a>
+            <a target="_blank" :href="SOCIAL_LINKS.github"><font-awesome-icon icon="fa-brands fa-github" class="contact-icon" /></a>
+            <a target="_blank" :href="SOCIAL_LINKS.linkedin"><font-awesome-icon icon="fa-brands fa-linkedin" class="contact-icon" /></a>
+            <a target="_blank" :href="SOCIAL_LINKS.figma"><font-awesome-icon icon="fa-brands fa-figma" class="contact-icon" /></a>
+            <a target="_blank" :href="SOCIAL_LINKS.twitter"><font-awesome-icon icon="fa-brands fa-twitter" class="contact-icon" /></a>
           </div>
         </div>
       </div>
@@ -32,9 +34,9 @@ useSeoMeta({
       <Footer>
         <p>Let's chat! You can find me here as well: </p>
         <div class="footer-icon-group">
-          <a target="_blank" href="https://discordapp.com/users/himecchi"><font-awesome-icon icon="fa-brands fa-discord" size="xl" class="footer-icon"></font-awesome-icon></a>
-          <a target="_blank" href="https://steamcommunity.com/id/pinkrangerhime/"><font-awesome-icon icon="fa-brands fa-steam" size="xl" class="footer-icon"></font-awesome-icon></a>
-          <a target="_blank" href="https://open.spotify.com/user/ieatbrainz?si=af0b87f0700849e9"><font-awesome-icon icon="fa-brands fa-spotify" size="xl" class="footer-icon"></font-awesome-icon></a>
+          <a target="_blank" :href="SOCIAL_LINKS.discord"><font-awesome-icon icon="fa-brands fa-discord" size="xl" class="footer-icon"></font-awesome-icon></a>
+          <a target="_blank" :href="SOCIAL_LINKS.steam"><font-awesome-icon icon="fa-brands fa-steam" size="xl" class="footer-icon"></font-awesome-icon></a>
+          <a target="_blank" :href="SOCIAL_LINKS.spotify"><font-awesome-icon icon="fa-brands fa-spotify" size="xl" class="footer-icon"></font-awesome-icon></a>
         </div>
       </Footer>
     </div>
@@ -53,9 +55,6 @@ useSeoMeta({
   gap: 10px;
   margin: 0 auto;
   max-width: 500px;
-  border-radius: 12px;
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
   background-color: var(--primary-shade);
   color: var(--neutral-shade);
 }

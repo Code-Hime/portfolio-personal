@@ -1,15 +1,16 @@
 # syntax=docker/dockerfile:1
-FROM node:18-alpine3.17 as build
+FROM node:24-alpine AS build
 WORKDIR /app
-COPY . /app
-COPY ./nginx/default.conf /app/nginx/default.conf
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
 RUN npm run build
 
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install nginx -y
-COPY --from=build /app/dist /var/www/html/
-COPY --from=build /app/nginx/default.conf /etc/nginx/conf.d/default.conf
-EXPOSE 8088
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:24-alpine
+WORKDIR /app
+COPY --from=build /app/.output ./.output
+ENV HOST=0.0.0.0 \
+    PORT=3000 \
+    NODE_ENV=production
+EXPOSE 3000
+CMD ["node", ".output/server/index.mjs"]

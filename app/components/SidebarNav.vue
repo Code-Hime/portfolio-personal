@@ -15,7 +15,7 @@ function closeSidebarPanel() {
   <div class="sidebar">
     <div class="sidebar-backdrop" @click="closeSidebarPanel" v-if="isPanelOpen"></div>
     <transition name="slide">
-      <div v-if="isPanelOpen" class="sidebar-panel">
+      <div v-if="isPanelOpen" class="sidebar-panel shadow-box">
         <slot></slot>
       </div>
     </transition>
@@ -37,9 +37,6 @@ function closeSidebarPanel() {
 .sidebar-panel {
   overflow-y: auto;
   background-color: var(--caution-shade);
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
-  border-radius: 12px;
   position: fixed;
   right: 18%;
   top: 12%;

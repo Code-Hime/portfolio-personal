@@ -1,131 +1,95 @@
 <script setup lang="ts">
+import type { StickerShape } from '~/types'
+
 definePageMeta({ layout: 'default' })
 useSeoMeta({
-  title: 'About — Lauren Doss',
-  description: 'Full Stack Developer, Designer, and creative problem solver based in Dallas, TX.',
+  title: `About — ${PROFILE.name}`,
+  description: `${PROFILE.description}, and creative problem solver based in ${PROFILE.location}.`,
 })
 const ResumePdf = '/DossLauren_Resume.pdf'
 
-const descriptors = ["a Creative", "a Thoughtful", "an Adaptable", "a Passionate"]
-const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 100 Mob Boss"]
+const STICKER_DISPLAY: Record<string, { shape: StickerShape, color: string, hideLabel?: boolean }> = {
+  Vue: { shape: 'heart', color: '#41B883', hideLabel: true },
+  TS: { shape: 'star', color: '#3178C6', hideLabel: true },
+  'HTML+CSS': { shape: 'burst', color: '#E34F26' },
+  'C#': { shape: 'hexagon', color: '#9B4F96' },
+  Figma: { shape: 'squircle', color: '#F24E1E' },
+}
 </script>
 
 <template>
   <section class="about">
     <div class="about-body">
-      <Header>
+      <PageHeader>
         <div>About</div>
-      </Header>
-      <div class="bio-container">
+      </PageHeader>
+      <Panel class="bio-container">
         <div class="col bio-img">
-          <NuxtImg src="/portrait.jpg" class="bio-portrait border-sm" alt="Lauren Doss" />
+          <NuxtImg src="/portrait.jpg" class="bio-portrait border-sm" :alt="PROFILE.name" />
         </div>
-        <div class="col bio-sect bio-basic border-sm">
-          <div class="bio-sect-header">
-            <div class="bio-sect-head-text">Basics:</div>
+
+        <AppSection title="Basics">
+          <DetailRow label="Title" :value="PROFILE.description" />
+          <DetailRow label="Located" :value="PROFILE.location" />
+          <DetailRow label="Pronouns" :value="PROFILE.pronouns" />
+          <DetailRow label="Pup's Name" :value="PROFILE.pet" />
+        </AppSection>
+
+        <!-- <AppSection title="Skills" class="bio-skills">
+          <div class="sticker-row">
+            <AppSticker
+              v-for="(s, i) in SKILLS"
+              :key="s.name"
+              :shape="STICKER_DISPLAY[s.name]!.shape"
+              :color="STICKER_DISPLAY[s.name]!.color"
+              :tilt="(i % 2 ? 1 : -1) * (3 + i)"
+            >
+              <TsMark v-if="s.icon === 'ts-mark'" :icon="s.icon" />
+              <font-awesome-icon v-else :icon="s.icon" size="2x" />
+              <span v-if="!STICKER_DISPLAY[s.name]?.hideLabel" class="sticker-label">{{ s.name }}</span>
+            </AppSticker>
           </div>
-          <div class="bio-sect-content">
-            <div class="qa-item single-line">
-              <div class="question">Title: </div>
-              <div class="answer">Full Stack Dev</div>
-            </div>
-            <div class="qa-item single-line">
-              <div class="question">Located: </div>
-              <div class="answer">Dallas, TX</div>
-            </div>
-            <div class="qa-item single-line">
-              <div class="question">Pronouns: </div>
-              <div class="answer">She/Her</div>
-            </div>
-            <div class="qa-item single-line">
-              <div class="question">Pet's Name: </div>
-              <div class="answer">Mako</div>
-            </div>
-          </div>
+        </AppSection> -->
+
+        <div class="sticker-col">
+          <AppSticker
+            class="sticker__vue"
+            shape="heart"
+            :color="STICKER_DISPLAY['Vue']!.color"
+          />
+          <AppSticker
+            class="sticker__ts"
+            :shape="STICKER_DISPLAY['TS']!.shape"
+            :color="STICKER_DISPLAY['TS']!.color"
+          />
         </div>
-        <div class="col bio-sect bio-skills border-sm">
-          <div class="bio-sect-header">
-            <div class="bio-sect-head-text">Skills:</div>
-          </div>
-          <div class="bio-sect-content">
-            <div class="skill-item single-line">
-              <div class="name">VueJS</div>
-              <div class="level-container">
-                <div class="level" style="width:90%;">
-                </div>
-              </div>
-            </div>
-            <div class="skill-item single-line">
-              <div class="name">HTML + CSS</div>
-              <div class="level-container">
-                <div class="level" style="width:80%;">
-                </div>
-              </div>
-            </div>
-            <div class="skill-item single-line">
-              <div class="name">JavaScript</div>
-              <div class="level-container">
-                <div class="level" style="width:70%;">
-                </div>
-              </div>
-            </div>
-            <div class="skill-item single-line">
-              <div class="name">C#</div>
-              <div class="level-container">
-                <div class="level" style="width:90%;">
-                </div>
-              </div>
-            </div>
-            <div class="skill-item single-line">
-              <div class="name">Figma</div>
-              <div class="level-container">
-                <div class="level" style="width:50%;">
-                </div>
-              </div>
+
+        <AppSection :show-header="false" class="bio-typing">
+          <div class="message-text">I'm Lauren </div>
+          <ClientOnly>
+            <VueWriter :array="[...ABOUT_DESCRIPTORS]" class="typing descriptors" />
+            <VueWriter :array="[...ABOUT_ROLES]" class="typing roles" />
+          </ClientOnly>
+        </AppSection>
+
+        <AppSection title="Interests">
+          <div v-for="item in INTERESTS" :key="item.label" class="interest-item">
+            <div class="interest-pill">
+              <span><font-awesome-icon :icon="item.prependIcon" size="xl" /></span>
+              {{ item.label }}
+              <span v-if="item.appendIcon"><font-awesome-icon :icon="item.appendIcon" size="xl" /></span>
             </div>
           </div>
-        </div>
-        <div class="bio-sect-no-header bio-typing col border-sm">
-          <div class="bio-sect-head-text">
-            <div class="message-text">I'm Lauren </div>
-            <ClientOnly>
-              <VueWriter :array="descriptors" class="typing descriptors" />
-              <VueWriter :array="roles" class="typing roles" />
-            </ClientOnly>
-          </div>
-        </div>
-        <div class="col bio-sect bio-likes border-sm">
-          <div class="bio-sect-header">
-            <div class="bio-sect-head-text">Interests:</div>
-          </div>
-          <div class="bio-sect-content">
-            <div class="qa-item full-width-line single-line">
-              <div class="answer">
-                <span>
-                  <font-awesome-icon icon="fa-solid fa-cookie-bite" size="xl"></font-awesome-icon>
-                </span> Cooking & Baking</div>
-            </div>
-            <div class="qa-item full-width-line single-line">
-              <div class="answer">
-                <span><font-awesome-icon icon="fa-solid fa-gamepad" size="xl"></font-awesome-icon></span> Virtual & Tabletop Games <span><font-awesome-icon icon="fa-brands fa-d-and-d" size="xl"></font-awesome-icon></span>
-              </div>
-            </div>
-            <div class="qa-item full-width-line single-line">
-              <div class="answer"><span><font-awesome-icon icon="fa-solid fa-book" size="xl"></font-awesome-icon></span> Sci-Fi & Fantasy</div>
-            </div>
-            <div class="qa-item full-width-line single-line">
-              <div class="answer"><span><font-awesome-icon icon="fa-solid fa-pen-ruler" size="xl"></font-awesome-icon></span> Drawing & Crafting <span><font-awesome-icon icon="fa-solid fa-hammer" size="xl"></font-awesome-icon></span></div>
-            </div>
-          </div>
-        </div>
+        </AppSection>
+
         <div class="col bio-cta">
           <a :href="ResumePdf" target="_blank">
-            <button class="resume-btn accent-btn">
+            <AppButton variant="accent" class="resume-btn">
               View Resume
-            </button>
+            </AppButton>
           </a>
         </div>
-      </div>
+      </Panel>
     </div>
     <div class="about-footer footer">
       <Footer>
@@ -137,31 +101,19 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 </template>
 
 <style scoped>
-/* About Style */
 .about-body {
   width: 100%;
 }
 
-/* Main Container */
 .bio-container {
-  display: flex;
   flex-flow: wrap;
   gap: 1.2em;
-  border-radius: 12px;
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
   padding: 1.2em 1.2em;
   background-color: var(--primary-shade);
-  color: var(--neutral-shade);
   justify-content: center;
   align-content: center;
 }
 
-.col {
-  flex-basis: 250px;
-}
-
-/* Portrait */
 .bio-portrait {
   width: 100%;
   object-fit: cover;
@@ -178,117 +130,53 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
   align-self: stretch;
 }
 
-.bio-cta a {
-  font-family: 'Ellograph Bold';
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: var(--neutral-shade);
-  text-shadow: none;
-  text-decoration: none;
-}
-
-.bio-sect {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex-grow: 2;
+.bio-cta {
+  flex-basis: 100%;
+  
+   a {
+    font-family: var(--font-bold);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--neutral-shade);
+    text-shadow: none;
+    text-decoration: none;
+  }
 }
 
 .bio-skills {
   flex-grow: 4;
 }
 
-.border-sm {
-  border: 2px solid var(--primary-shade-dark);
-  border-radius: 8px;
-}
-
-.bio-sect-header {
-  width: 100%;
-  min-height: 15%;
-  background-color: var(--accent-shade-light);
-  border-radius: 6px 6px 0px 0px;
-  border-bottom: 2px solid var(--neutral-shade);
-}
-
-.bio-sect-head-text {
-  padding: 8px;
-}
-
-.bio-sect-content {
+.sticker-row {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 10px 20px;
-  height: 100%;
-  overflow: hidden;
-  background-color: var(--accent-shade);
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
-.single-line {
+.sticker-label {
+  font-family: var(--font-bold);
+  font-size: 0.9rem;
+}
+
+.interest-item {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  margin-bottom: 8px;
-  align-items: center;
   text-align: center;
+  margin-bottom: 8px;
 }
 
-.question {
-  font-family: Ellograph Bold;
-  font-size: 1.2rem;
-}
-
-.answer {
-  background-color: var(--accent-shade-light);
-  padding: 2px 10px;
-  border-radius: 20px;
-  width: 60%;
-  flex: 1;
-}
-
-.full-width-line .answer {
+.interest-pill {
   background-color: var(--accent-shade-light);
   padding: 4px 12px;
   border-radius: 16px;
-  width: 100%;
-}
-
-.name {
-  font-family: Ellograph Bold;
-}
-
-.level-container {
-  background-color: var(--primary-shade-dark);
-  padding: 2px;
-  border-radius: 20px;
-  width: 60%;
-  position: relative;
-  vertical-align: center;
   flex: 1;
 }
 
-.level {
-  background-color: var(--primary-shade-light);
-  padding: 2px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  position: relative;
-}
-
-.bio-sect-no-header {
-  flex-grow: 1;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: var(--accent-shade-light);
-  display: flex;
-  flex-direction: column;
-  border: 2px solid var(--neutral-shade);
-}
-
 .bio-typing {
+  --app-section-bg: var(--accent-shade-light);
   text-align: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -306,7 +194,7 @@ const roles = ["Developer", "Designer", "Problem Solver", "Puzzle Master", "Lvl 
 
 .message-text {
   font-size: 1.6rem;
-  font-family: Ellograph Demi Bold;
+  font-family: var(--font-demi-bold);
   text-shadow: var(--primary-shade-60) 2px 2px;
 }
 </style>

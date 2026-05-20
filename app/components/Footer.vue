@@ -1,16 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="footer-container sb">
+  <div class="footer-container shadow-box sb">
     <slot></slot>
   </div>
 </template>
 
 <style scoped>
 .footer-container {
-  border-radius: 12px;
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
   padding: 0.6em 1.2em;
   background-color: var(--caution-shade);
   color: var(--neutral-shade);
@@ -18,13 +15,13 @@
   margin: 50px auto;
   min-height: 80px;
   min-width: 100px;
-  font-family: 'Ellograph Light';
+  font-family: var(--font-light);
   font-size: 1.2rem;
 }
 
 .footer-container a {
   color: var(--primary-shade);
-  font-family: 'Ellograph Demi Bold';
+  font-family: var(--font-demi-bold);
 }
 
 .sb:before {

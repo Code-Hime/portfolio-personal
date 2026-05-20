@@ -31,7 +31,14 @@
   /* Info */
   --info-shade: oklch(57.6% 0.1549 248.12);
 
-  font-family: 'Ellograph Regular', monospace;
+  /* Font Families */
+  --font-regular: 'Ellograph Regular', monospace;
+  --font-bold: 'Ellograph Bold', monospace;
+  --font-demi-bold: 'Ellograph Demi Bold', monospace;
+  --font-light: 'Ellograph Light', monospace;
+  --font-thin: 'Ellograph Thin', monospace;
+
+  font-family: var(--font-regular);
   font-style: normal;
   font-weight: 100;
   line-height: 1.4;
@@ -80,7 +87,7 @@ section {
   margin-top: 2rem;
   align-items: center;
   justify-items: center;
-  max-width: 1200px;
+  max-width: 1080px;
   width: 80vw;
 }
 
@@ -127,14 +134,29 @@ button:focus-visible {
 
 .accent-text a {
   color: var(--caution-shade) !important;
-  font-family: 'Ellograph Regular';
+  font-family: var(--font-regular);
 }
 
 a {
   text-transform: uppercase;
   color: var(--primary-shade);
-  font-family: 'Ellograph Demi Bold';
+  font-family: var(--font-demi-bold);
   text-shadow: var(--primary-shade-60) 1px 1px;
+}
+
+.col {
+  flex-basis: 250px;
+}
+
+.shadow-box {
+  border-radius: 12px;
+  border: 2px solid var(--neutral-shade);
+  box-shadow: 4px 4px var(--neutral-shade);
+}
+
+.border-sm {
+  border: 2px solid var(--primary-shade-dark);
+  border-radius: 8px;
 }
 
 .footer {

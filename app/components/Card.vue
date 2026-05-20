@@ -1,11 +1,7 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  imageUrl?: string
-  imageAltText?: string
-  descText?: string
-  projectName?: string
-  roleText?: string
-}>(), {
+import type { Project } from '~/types'
+
+withDefaults(defineProps<Partial<Project>>(), {
   imageUrl: '/',
   imageAltText: 'No image loaded, placeholder image shown',
   descText: '',
@@ -15,7 +11,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="card">
+  <Panel class="card">
     <div class="card-header">
       <p class="header-text">{{ projectName }}</p>
     </div>
@@ -29,18 +25,13 @@ withDefaults(defineProps<{
     <div class="desc-text">
       <p>{{ descText }}</p>
     </div>
-  </div>
+  </Panel>
 </template>
 
 <style scoped>
 .card {
   width: 100%;
-  border-radius: 12px;
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
   background-color: var(--accent-shade);
-  color: var(--neutral-shade);
-  display: flex;
   flex-direction: column;
 }
 
@@ -97,7 +88,7 @@ withDefaults(defineProps<{
 }
 
 .roles-title {
-  font-family: "Ellograph Bold";
+  font-family: var(--font-bold);
 }
 
 .roles p,

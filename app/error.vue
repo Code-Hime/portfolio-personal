@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ error: { statusCode: number; message: string } }>()
+defineProps<{ error: { statusCode: number; message: string } }>()
 
 function handleError() {
   clearError({ redirect: '/' })
@@ -8,7 +8,7 @@ function handleError() {
 
 <template>
   <div class="error-page">
-    <div class="error-container">
+    <div class="error-container shadow-box">
       <h1 class="error-code">{{ error.statusCode }}</h1>
       <p class="error-message">{{ error.message }}</p>
       <button class="accent-btn" @click="handleError">Go Home</button>
@@ -26,9 +26,6 @@ function handleError() {
 
 .error-container {
   text-align: center;
-  border-radius: 12px;
-  border: 2px solid var(--neutral-shade);
-  box-shadow: 4px 4px var(--neutral-shade);
   background-color: var(--primary-shade);
   color: var(--neutral-shade);
   padding: 2rem 3rem;

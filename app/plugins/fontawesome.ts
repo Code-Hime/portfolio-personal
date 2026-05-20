@@ -2,31 +2,38 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Import specific icons
-import { 
-  faBrain, 
-  faStar, 
-  faCake, 
-  faCookieBite, 
-  faGamepad, 
-  faBook, 
-  faPenRuler, 
+import {
+  faBrain,
+  faStar,
+  faCake,
+  faCookieBite,
+  faBreadSlice,
+  faGamepad,
+  faBook,
+  faHatWizard,
+  faPenRuler,
   faHammer,
   faDiceD20,
   faAt,
-  faThumbTack 
+  faThumbTack,
+  faCode
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
-import { 
-  faDAndD, 
-  faDAndDBeyond, 
-  faSpotify, 
-  faLinkedin, 
-  faGithub, 
-  faTwitter, 
-  faFigma, 
-  faDiscord, 
-  faSteam 
+import {
+  faDAndD,
+  faDAndDBeyond,
+  faSpotify,
+  faLinkedin,
+  faGithub,
+  faTwitter,
+  faFigma,
+  faDiscord,
+  faSteam,
+  faVuejs,
+  faJs,
+  faHtml5,
+  faCss3Alt
 } from '@fortawesome/free-brands-svg-icons'
 
 // Add icons to the library
@@ -35,10 +42,12 @@ library.add(
   faStar, 
   faStarRegular, 
   faCake, 
-  faCookieBite, 
-  faGamepad, 
-  faBook, 
-  faDAndD, 
+  faCookieBite,
+  faBreadSlice,
+  faGamepad,
+  faBook,
+  faHatWizard,
+  faDAndD,
   faPenRuler, 
   faHammer, 
   faDiceD20, 
@@ -50,8 +59,13 @@ library.add(
   faAt, 
   faFigma, 
   faThumbTack, 
-  faDiscord, 
-  faSteam
+  faDiscord,
+  faSteam,
+  faCode,
+  faVuejs,
+  faJs,
+  faHtml5,
+  faCss3Alt
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

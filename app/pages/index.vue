@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: { path: '/about', statusCode: 301 },
+  middleware: () => navigateTo('/about', { redirectCode: 301 }),
 })
 </script>
 
